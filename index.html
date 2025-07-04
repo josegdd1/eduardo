@@ -1,15 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirección aleatoria</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eduardo App</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 40px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:active {
+      background-color: #218838;
+    }
+  </style>
 </head>
 <body>
-    <script>
-        // Lista de enlaces aleatorios
-        const enlaces = [
-            'https://www.xnxx.com/video-wt9th0d/cuarentena_familiar_pt_1',
+  <img src="https://i.postimg.cc/NGmcd4P2/Picsart-24-07-08-22-04-00-854.png" alt="Pingüino con lentes" />
+  <h1>Eduardo App</h1>
+  <button id="redirBtn">Disfruta</button>
+
+  <script>
+    const enlaces = [
+       'https://www.xnxx.com/video-wt9th0d/cuarentena_familiar_pt_1',
             'https://www.xnxx.com/video-vkv0t0d/mama_e_hijo_necesitan_follar',
             'https://es.pornhub.com/view_video.php?viewkey=ph634b4f00ca42f',
             'https://www.xnxx.com/video-wjao13e/pyper_prentice_es_una_linda_pelirroja_que_pasaba_el_dia_junto_a_la_piscina_mostrando_su_cuerpazo',
@@ -101,12 +145,19 @@
            'https://es.pornhub.com/view_video.php?viewkey=ph62ebd4886fb62',
            'https://es.pornhub.com/view_video.php?viewkey=ph62eace4750e8a',
            'https://es.pornhub.com/view_video.php?viewkey=ph62d5b16cda41d'
-            // Agrega más enlaces aquí
-        ];
+    ];
 
-        // Redirige a un enlace aleatorio
-        const enlaceAleatorio = enlaces[Math.floor(Math.random() * enlaces.length)];
-        window.location.href = enlaceAleatorio;
-    </script>
+    const boton = document.getElementById('redirBtn');
+
+    boton.onclick = function () {
+      // Animación simple manual (transformar escala)
+      boton.style.transform = 'scale(1.2)';
+      // Luego de 700ms redirige
+      setTimeout(() => {
+        const aleatorio = Math.floor(Math.random() * enlaces.length);
+        window.location.href = enlaces[aleatorio];
+      }, 700);
+    };
+  </script>
 </body>
 </html>
